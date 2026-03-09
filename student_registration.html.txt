@@ -1,0 +1,118 @@
+Code to File: **student_registration.html**
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+<title>Student Registration Form</title>
+
+<style>
+body{
+ font-family: Arial;
+ background: linear-gradient(to right,#6a5acd,#7b68ee);
+}
+
+.container{
+ width:800px;
+ margin:auto;
+ background:#6a5acd;
+ padding:30px;
+ color:white;
+}
+
+h1{
+ text-align:center;
+ text-decoration:underline;
+}
+
+table{
+ width:100%;
+}
+
+td{
+ padding:8px;
+}
+
+input, select, textarea{
+ padding:6px;
+ border-radius:3px;
+ border:none;
+}
+
+button{
+ padding:8px 15px;
+ margin-top:10px;
+}
+</style>
+
+<script>
+function validateForm(){
+
+var fname = document.forms["regForm"]["fname"].value;
+var email = document.forms["regForm"]["email"].value;
+var mobile = document.forms["regForm"]["mobile"].value;
+
+if(fname==""){
+ alert("First Name must be filled out");
+ return false;
+}
+
+if(email==""){
+ alert("Email must be filled out");
+ return false;
+}
+
+if(mobile.length!=10){
+ alert("Mobile number must be 10 digits");
+ return false;
+}
+
+alert("Form Submitted Successfully");
+return true;
+}
+</script>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Student Registration Form</h1>
+
+<form name="regForm" onsubmit="return validateForm()">
+
+<table>
+
+<tr>
+<td>First Name</td>
+<td><input type="text" name="fname"></td>
+</tr>
+
+<tr>
+<td>Email</td>
+<td><input type="email" name="email"></td>
+</tr>
+
+<tr>
+<td>Mobile</td>
+<td><input type="text" name="mobile"></td>
+</tr>
+
+<tr>
+<td></td>
+<td>
+<button type="submit">Submit</button>
+<button type="reset">Reset</button>
+</td>
+</tr>
+
+</table>
+
+</form>
+
+</div>
+
+</body>
+</html>
+```
